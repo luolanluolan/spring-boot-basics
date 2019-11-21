@@ -3,17 +3,21 @@ package com.origin.basics.reflectDemo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 
 /**
  * @author LL
  * @date 2019/11/20 16:30
- * @describe 获得Class的三种方式
+ * @describe 获得Class的三种方式  https://www.cnblogs.com/ysocean/p/6516248.html
  */
 public class GetClassWay {
 
     static Logger  logger = LoggerFactory.getLogger(GetClassWay.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         //1、通过对象调用getClass()方法获取（例如传过来一个Object类型的对象，而我不知道具体类型，用这种方法）
         Person p1 = new Person();
@@ -25,12 +29,15 @@ public class GetClassWay {
         logger.info("2、通过class方式获得Class: " + c2);
 
         //3、通过Class对象的forName()静态方法来获取，用的最多，但可能抛出ClassNotFoundException异常
+        Class c3 = null;
         try {
-            Class c3 = Class.forName("com.origin.basics.reflectDemo.Person");
+            c3 = Class.forName("com.origin.basics.reflectDemo.Person");
             logger.info("3、通过Class.forName(String ClassPath)方式获得Class: " + c3);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        System.out.println("c1.equals(c2)" + c1.equals(c2)+"---c2.equals(c3)"+c2.equals(c3)+"---c1.equals(c3)"+c1.equals(c3));
 
     }
 
