@@ -1,3 +1,0 @@
-2019-11-20  17:20:13.790 [main] INFO  com.origin.basics.reflectDemo.GetClassWay - 1、通过getClass方式获得Class: class com.origin.basics.reflectDemo.Person
-2019-11-20  17:20:13.793 [main] INFO  com.origin.basics.reflectDemo.GetClassWay - 2、通过class方式获得Class: class com.origin.basics.reflectDemo.Person
-2019-11-20  17:20:13.793 [main] INFO  com.origin.basics.reflectDemo.GetClassWay - 3、通过Class.forName(String ClassPath)方式获得Class: class com.origin.basics.reflectDemo.Person
